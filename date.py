@@ -3,6 +3,7 @@
 # example   : date('d-M-Y'), minus 1 day date('d-M-Y', -1), plus 1 day date('d-M-Y', 1)
 # result    : 12-05-2016, 11-05-2016, 13-05-2016,
 #
+import datetime, re
 def date(format = "", delta = 0):
     assert isinstance(format, basestring), "Date format must be a string"
     assert isinstance(delta, int), "Date delta must be an integer"
