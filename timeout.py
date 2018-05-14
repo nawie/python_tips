@@ -68,9 +68,9 @@ class timeout(object):
             return result
 
 if __name__ == '__main__':
-    import time
-
     def foo(x=1):
+        import time
+        
         cnt = 1
         while True:
             time.sleep(1)
@@ -78,7 +78,7 @@ if __name__ == '__main__':
             cnt += 1
 
     print(timeout()(foo, kwargs={'x': 'Hi'}, timeout=3, default='Bye'))
-    print(timeout()(foo, args=(2,), timeout=2, default='Sayonara'))
+    print(timeout(using_dill=True)(foo, args=(2,), timeout=2, default='Sayonara'))
     print(timeout()(foo, args=(2,), timeout=2, raise_error=True))
     """
     >>> ('Hi', 1)
